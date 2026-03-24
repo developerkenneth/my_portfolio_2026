@@ -147,8 +147,10 @@
           </button>
         </div>
       </div>
+
+
       <!-- Projects Grid -->
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div id="project-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         <!-- Project Card 1 -->
         <div
           class="group flex flex-col bg-white dark:bg-slate-900 rounded-xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-xl hover:shadow-primary/5 transition-all duration-300"
@@ -329,105 +331,16 @@
             </div>
           </div>
         </div>
-        <!-- Project Card 5 -->
-        <div
-          class="group flex flex-col bg-white dark:bg-slate-900 rounded-xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-xl hover:shadow-primary/5 transition-all duration-300"
-        >
-          <div class="relative aspect-video overflow-hidden">
-            <img
-              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-              data-alt="Abstract code line patterns with blue glow"
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3hqZAi7H1oZ293Qid4P4a-scdT1uHoGOV66-PhV2s8_4KdNbokmnMU7NBQK_zOsf_ADtEIJl02EVmCG6vAVH005Zf5aZmJNC9CROGtyJNF2WxQ9McV4vK-1lppeEAmUdtJZ9Vy50tWQSf_eu5Ivu_cdlZvDdNmTGGm2Ibss0PP5OzzMh8elY4cdKFd9GxANLMt8lERiTQd0wcY0K5xuwyEflhwH7FbZ1YY3viTnsR0SrLBwG90HJmtRn4Cqfg446VZnY07kWps7E"
-            />
-            <div class="absolute top-3 left-3 flex gap-2">
-              <span
-                class="px-2 py-1 text-[10px] font-bold tracking-wider uppercase bg-primary text-white rounded"
-                >Go</span
-              >
-              <span
-                class="px-2 py-1 text-[10px] font-bold tracking-wider uppercase bg-blue-800 text-white rounded"
-                >Kubernetes</span
-              >
-            </div>
-          </div>
-          <div class="p-6 flex flex-col flex-1">
-            <h3
-              class="text-xl font-bold mb-2 group-hover:text-primary transition-colors"
-            >
-              Cloud Monitoring
-            </h3>
-            <p class="text-slate-600 dark:text-slate-400 text-sm mb-4 flex-1">
-              Microservices infrastructure health monitor with automated
-              alerting and resource optimization.
-            </p>
-            <div class="flex items-center gap-4 mt-4">
-              <button
-                class="flex-1 bg-primary text-white text-xs font-bold py-2.5 rounded-lg hover:bg-primary/90 transition-colors"
-              >
-                View Case Study
-              </button>
-              <button
-                class="flex items-center justify-center w-10 h-10 bg-slate-100 dark:bg-slate-800 rounded-lg hover:text-primary transition-colors"
-              >
-                <span class="material-symbols-outlined text-lg">code</span>
-              </button>
-            </div>
-          </div>
-        </div>
+
         <!-- Project Card 6 -->
-        <div
-          class="group flex flex-col bg-white dark:bg-slate-900 rounded-xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-xl hover:shadow-primary/5 transition-all duration-300"
-        >
-          <div class="relative aspect-video overflow-hidden">
-            <img
-              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-              data-alt="Fitness tracker application interface on a smartphone"
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuByGQ84KY1Tx1OPVn4dFWFQwxDedI0hc7p-nkprgYkupPhqLZnMqHtfOnlrXcouH3B5gd7EjllYQlLmIsBt8s5MNqxSaPLnJejN5lk3UVLwxUQLMqaMAEGjVGuoTCbNcktTUC-8iG529s0w5rZNqG27y46JzSzKYhAxYgZ6PjegD0XoLyyoZzy2_oO593gjGeq6iXeBx3oI1AgXc_0zpC3i4l2fmyymf_I0VEM7zV_BlN0br9NmOXE5e-WTajAkusYPx5xnsQ_aQmY"
-            />
-            <div class="absolute top-3 left-3 flex gap-2">
-              <span
-                class="px-2 py-1 text-[10px] font-bold tracking-wider uppercase bg-primary text-white rounded"
-                >SvelteKit</span
-              >
-              <span
-                class="px-2 py-1 text-[10px] font-bold tracking-wider uppercase bg-pink-500 text-white rounded"
-                >Firebase</span
-              >
-            </div>
-          </div>
-          <div class="p-6 flex flex-col flex-1">
-            <h3
-              class="text-xl font-bold mb-2 group-hover:text-primary transition-colors"
-            >
-              Fitness Tracker
-            </h3>
-            <p class="text-slate-600 dark:text-slate-400 text-sm mb-4 flex-1">
-              Comprehensive health analytics app with goal tracking, nutritional
-              logging, and community challenges.
-            </p>
-            <div class="flex items-center gap-4 mt-4">
-              <button
-                class="flex-1 bg-primary text-white text-xs font-bold py-2.5 rounded-lg hover:bg-primary/90 transition-colors"
-              >
-                View Case Study
-              </button>
-              <button
-                class="flex items-center justify-center w-10 h-10 bg-slate-100 dark:bg-slate-800 rounded-lg hover:text-primary transition-colors"
-              >
-                <span class="material-symbols-outlined text-lg">code</span>
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- Pagination or Load More -->
-      <div class="mt-16 flex justify-center">
-        <button
-          class="flex items-center gap-2 bg-slate-200 dark:bg-slate-800 hover:bg-slate-300 dark:hover:bg-slate-700 text-slate-900 dark:text-white px-8 py-3 rounded-xl font-bold transition-all"
-        >
-          Load More Projects
-          <span class="material-symbols-outlined">expand_more</span>
-        </button>
+
+
+        <!-- Project Card 5 -->
+
+
+
+
+
       </div>
     </main>
     <!-- Footer -->
@@ -488,4 +401,7 @@
       </div>
     </footer>
   </body>
+  <script src="assets/js/app.js"></script>
+    <script src="assets/js/projects.js"></script>
+
 </html>
