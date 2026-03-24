@@ -1,0 +1,491 @@
+<!doctype html>
+
+<html class="dark" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Project Showcase | DevPortfolio</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#0d59f2",
+              "background-light": "#f5f6f8",
+              "background-dark": "#101622",
+            },
+            fontFamily: {
+              display: ["Inter", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+      }
+    </style>
+  </head>
+  <body
+    class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen"
+  >
+    <!-- Top Navigation Bar -->
+    <header
+      class="sticky top-0 z-50 w-full border-b border-slate-200 dark:border-slate-800 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex h-16 items-center justify-between">
+          <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-primary text-3xl"
+              >terminal</span
+            >
+            <h1
+              class="text-xl font-bold tracking-tight text-slate-900 dark:text-white"
+            >
+              EmethSoftwares
+            </h1>
+          </div>
+          <nav class="hidden md:flex items-center gap-8">
+            <a
+              class="text-sm font-medium hover:text-primary transition-colors"
+              href="index.html"
+              >Home</a
+            >
+            <a
+              class="text-sm font-medium text-primary underline underline-offset-8"
+              href="#"
+              >Projects</a
+            >
+            <a
+              class="text-sm font-medium hover:text-primary transition-colors"
+              href="about.html"
+              >About</a
+            >
+            <a
+              class="text-sm font-medium hover:text-primary transition-colors"
+              href="contact.html"
+              >Contact</a
+            >
+          </nav>
+          <div class="flex items-center gap-4">
+            <button
+              class="bg-primary hover:bg-primary/90 text-white px-5 py-2 rounded-lg text-sm font-bold transition-all"
+            >
+              Hire Me
+            </button>
+            <div
+              class="w-10 h-10 rounded-full bg-slate-200 dark:bg-slate-800 flex items-center justify-center overflow-hidden border border-slate-300 dark:border-slate-700"
+            >
+              <img
+                class="w-full h-full object-cover"
+                data-alt="Portrait of a male software developer smiling"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBUFVksNYG2qu4aDGoEMJZBtip-NIX82idc3Rpg9z4rKOMt0uoNhLjYl0NCqmhLDRCK8gpNY6o91xjaowveRVK4lVGX4Ftrz97ZgLbqRYTKzWwj1x_9I5RATEqLZ8GO-bS_Mkdg0eGZa1BxwujDmLg0IcPmnwwELvBgY7wFHfoc3JeyAGBPZ_13HXV5GMQGpSdPZ8zNN0f11QTkMWF-JNKTWzmzpxQ8ZBSTFO34XefiWIZbbF8LUdlC3dsOHnLiE37ppZIwVRUTwv8"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <!-- Hero Section & Filters -->
+      <div class="mb-12">
+        <h2 class="text-4xl md:text-5xl font-black mb-4 tracking-tight">
+          Featured Projects
+        </h2>
+        <p
+          class="text-slate-600 dark:text-slate-400 max-w-2xl text-lg leading-relaxed"
+        >
+          A selection of high-performance web applications and AI-driven
+          solutions built with modern technologies and a focus on scalability.
+        </p>
+        <div class="mt-8 flex flex-wrap gap-3">
+          <button
+            class="px-5 py-2 rounded-full bg-primary text-white text-sm font-semibold"
+          >
+            All Projects
+          </button>
+          <button
+            class="px-5 py-2 rounded-full bg-slate-200 dark:bg-slate-800 hover:bg-slate-300 dark:hover:bg-slate-700 text-sm font-medium transition-colors"
+          >
+            Web Apps
+          </button>
+          <button
+            class="px-5 py-2 rounded-full bg-slate-200 dark:bg-slate-800 hover:bg-slate-300 dark:hover:bg-slate-700 text-sm font-medium transition-colors"
+          >
+            AI &amp; ML
+          </button>
+          <button
+            class="px-5 py-2 rounded-full bg-slate-200 dark:bg-slate-800 hover:bg-slate-300 dark:hover:bg-slate-700 text-sm font-medium transition-colors"
+          >
+            Open Source
+          </button>
+          <button
+            class="px-5 py-2 rounded-full bg-slate-200 dark:bg-slate-800 hover:bg-slate-300 dark:hover:bg-slate-700 text-sm font-medium transition-colors"
+          >
+            Mobile
+          </button>
+        </div>
+      </div>
+      <!-- Projects Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Project Card 1 -->
+        <div
+          class="group flex flex-col bg-white dark:bg-slate-900 rounded-xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-xl hover:shadow-primary/5 transition-all duration-300"
+        >
+          <div class="relative aspect-video overflow-hidden">
+            <img
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              data-alt="Modern minimalist e-commerce dashboard interface preview"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuBI054Bjbu7QJLQGR2ksIoAH5pKa9Md9eZMnDQCk-o4tCOd9cbyKtt8OCQywC4DEhYWpoytVtY7hvnoxEWne2EdcUaD4bexnakZnuYVNQGV3tEmeJ0ZMraB940juRfWKjje0GJ5YSoOfpHok8nSl0ZJkBUZ4NnCBnvAHvVKhWQgXJuQYCAaSvO4ZxGXPzzfLhG4Y1g0ByF3qE64UwfUaOBfXSOMrOQxQXwTzzoiM_kZXnNiGqxV_IhLVnDWjbDXtHAxNhXKI5-B4QE"
+            />
+            <div class="absolute top-3 left-3 flex gap-2">
+              <span
+                class="px-2 py-1 text-[10px] font-bold tracking-wider uppercase bg-primary text-white rounded"
+                >Next.js</span
+              >
+              <span
+                class="px-2 py-1 text-[10px] font-bold tracking-wider uppercase bg-emerald-500 text-white rounded"
+                >Stripe</span
+              >
+            </div>
+          </div>
+          <div class="p-6 flex flex-col flex-1">
+            <h3
+              class="text-xl font-bold mb-2 group-hover:text-primary transition-colors"
+            >
+              E-commerce Platform
+            </h3>
+            <p class="text-slate-600 dark:text-slate-400 text-sm mb-4 flex-1">
+              High-performance storefront with seamless payment integration,
+              real-time inventory tracking, and custom CMS.
+            </p>
+            <div class="flex items-center gap-4 mt-4">
+              <button
+                class="flex-1 bg-primary text-white text-xs font-bold py-2.5 rounded-lg hover:bg-primary/90 transition-colors"
+              >
+                View Case Study
+              </button>
+              <button
+                class="flex items-center justify-center w-10 h-10 bg-slate-100 dark:bg-slate-800 rounded-lg hover:text-primary transition-colors"
+              >
+                <span class="material-symbols-outlined text-lg">code</span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- Project Card 2 -->
+        <div
+          class="group flex flex-col bg-white dark:bg-slate-900 rounded-xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-xl hover:shadow-primary/5 transition-all duration-300"
+        >
+          <div class="relative aspect-video overflow-hidden">
+            <img
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              data-alt="Data visualization dashboard with glowing charts"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuBF82mrSnhQfu9H3sowIXKNwpxUFU0ewKB3C2J_2YiM6p_-Nb0MbmkkdYlzwXvW2LhR6ldGBLGrPKX7RZSbvjPqOyj8ojUjKHGTXDyKmztUtXYyDD1LnN3KAFhClLW9Ezz9uIwNpL8te52kBwxLax093qE9XEprODqn76XmSLk1y4YTj9_yu_dPFh46Gga0tKaHi-f-Jv5QbcPfjH-2E9PhPfhQ-9AxrincnflYUsoVkPNYAz1uwPSy7NhSU6Seu2pHjPI8bMqvpAk"
+            />
+            <div class="absolute top-3 left-3 flex gap-2">
+              <span
+                class="px-2 py-1 text-[10px] font-bold tracking-wider uppercase bg-primary text-white rounded"
+                >Python</span
+              >
+              <span
+                class="px-2 py-1 text-[10px] font-bold tracking-wider uppercase bg-purple-500 text-white rounded"
+                >OpenAI</span
+              >
+            </div>
+          </div>
+          <div class="p-6 flex flex-col flex-1">
+            <h3
+              class="text-xl font-bold mb-2 group-hover:text-primary transition-colors"
+            >
+              AI Dashboard
+            </h3>
+            <p class="text-slate-600 dark:text-slate-400 text-sm mb-4 flex-1">
+              Real-time data visualization and predictive analytics leveraging
+              GPT-4 for natural language querying of databases.
+            </p>
+            <div class="flex items-center gap-4 mt-4">
+              <button
+                class="flex-1 bg-primary text-white text-xs font-bold py-2.5 rounded-lg hover:bg-primary/90 transition-colors"
+              >
+                View Case Study
+              </button>
+              <button
+                class="flex items-center justify-center w-10 h-10 bg-slate-100 dark:bg-slate-800 rounded-lg hover:text-primary transition-colors"
+              >
+                <span class="material-symbols-outlined text-lg">code</span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- Project Card 3 -->
+        <div
+          class="group flex flex-col bg-white dark:bg-slate-900 rounded-xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-xl hover:shadow-primary/5 transition-all duration-300"
+        >
+          <div class="relative aspect-video overflow-hidden">
+            <img
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              data-alt="Social media mobile app interface showing feed"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuB7VoLnwzVH0BaH3uBh6J9H4R9KO0cpzkf6iR4Nwxdju-nuL64dhN5SAUaIaOtYui6_nlhX32h1pILJ4Lwvc90VuR9FosaAM3GC9n1gfKsckMTryRvIZb6DACR2v8_a2-EZajcVn7NTsUCyvqWSC3zuyH5Xe2G-jo0Q9yebdK7x7jr1980K_ntaUCRMRKz3D3zUkphhb_PxQIkP11J-We41-kENACoTHT-3XNAxuElcjwM7BesEmhjGhPfA7fMt2u1u2PfrX-N-zk0"
+            />
+            <div class="absolute top-3 left-3 flex gap-2">
+              <span
+                class="px-2 py-1 text-[10px] font-bold tracking-wider uppercase bg-primary text-white rounded"
+                >React Native</span
+              >
+              <span
+                class="px-2 py-1 text-[10px] font-bold tracking-wider uppercase bg-blue-400 text-white rounded"
+                >Socket.io</span
+              >
+            </div>
+          </div>
+          <div class="p-6 flex flex-col flex-1">
+            <h3
+              class="text-xl font-bold mb-2 group-hover:text-primary transition-colors"
+            >
+              Social Media App
+            </h3>
+            <p class="text-slate-600 dark:text-slate-400 text-sm mb-4 flex-1">
+              Scalable real-time networking with interactive features, direct
+              messaging, and secure media sharing.
+            </p>
+            <div class="flex items-center gap-4 mt-4">
+              <button
+                class="flex-1 bg-primary text-white text-xs font-bold py-2.5 rounded-lg hover:bg-primary/90 transition-colors"
+              >
+                View Case Study
+              </button>
+              <button
+                class="flex items-center justify-center w-10 h-10 bg-slate-100 dark:bg-slate-800 rounded-lg hover:text-primary transition-colors"
+              >
+                <span class="material-symbols-outlined text-lg">code</span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- Project Card 4 -->
+        <div
+          class="group flex flex-col bg-white dark:bg-slate-900 rounded-xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-xl hover:shadow-primary/5 transition-all duration-300"
+        >
+          <div class="relative aspect-video overflow-hidden">
+            <img
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              data-alt="Cryptocurrency exchange chart and trading interface"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuDfDI2vPJ5sXI2RgJVJ_ATgMk7OAXkAkSt3pos_LUsvBtfUfbrrytHvN01jES-3kHAZ3byH9qCmbIYuwPeTNT4ImxKOVEGVY6AstvsHxjFstHIcUF6x065v-8wx610GkDhukBUOmlrYmbxkRFs_8aAXjdoLtJEYZNvMSbUFJlu6-qXer62NmcCexl6ytZs3zBqaN3_gvDJ9xG_ai3KhnBU88XMDRdbaheKyH6b2h947EZQkjMVGi-YSlMpht7-YgM6Z_6fCIK8yuZ0"
+            />
+            <div class="absolute top-3 left-3 flex gap-2">
+              <span
+                class="px-2 py-1 text-[10px] font-bold tracking-wider uppercase bg-primary text-white rounded"
+                >Solidity</span
+              >
+              <span
+                class="px-2 py-1 text-[10px] font-bold tracking-wider uppercase bg-orange-500 text-white rounded"
+                >Web3</span
+              >
+            </div>
+          </div>
+          <div class="p-6 flex flex-col flex-1">
+            <h3
+              class="text-xl font-bold mb-2 group-hover:text-primary transition-colors"
+            >
+              Web3 Wallet
+            </h3>
+            <p class="text-slate-600 dark:text-slate-400 text-sm mb-4 flex-1">
+              Secure non-custodial wallet interface supporting multi-chain
+              transactions and NFT visualization.
+            </p>
+            <div class="flex items-center gap-4 mt-4">
+              <button
+                class="flex-1 bg-primary text-white text-xs font-bold py-2.5 rounded-lg hover:bg-primary/90 transition-colors"
+              >
+                View Case Study
+              </button>
+              <button
+                class="flex items-center justify-center w-10 h-10 bg-slate-100 dark:bg-slate-800 rounded-lg hover:text-primary transition-colors"
+              >
+                <span class="material-symbols-outlined text-lg">code</span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- Project Card 5 -->
+        <div
+          class="group flex flex-col bg-white dark:bg-slate-900 rounded-xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-xl hover:shadow-primary/5 transition-all duration-300"
+        >
+          <div class="relative aspect-video overflow-hidden">
+            <img
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              data-alt="Abstract code line patterns with blue glow"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3hqZAi7H1oZ293Qid4P4a-scdT1uHoGOV66-PhV2s8_4KdNbokmnMU7NBQK_zOsf_ADtEIJl02EVmCG6vAVH005Zf5aZmJNC9CROGtyJNF2WxQ9McV4vK-1lppeEAmUdtJZ9Vy50tWQSf_eu5Ivu_cdlZvDdNmTGGm2Ibss0PP5OzzMh8elY4cdKFd9GxANLMt8lERiTQd0wcY0K5xuwyEflhwH7FbZ1YY3viTnsR0SrLBwG90HJmtRn4Cqfg446VZnY07kWps7E"
+            />
+            <div class="absolute top-3 left-3 flex gap-2">
+              <span
+                class="px-2 py-1 text-[10px] font-bold tracking-wider uppercase bg-primary text-white rounded"
+                >Go</span
+              >
+              <span
+                class="px-2 py-1 text-[10px] font-bold tracking-wider uppercase bg-blue-800 text-white rounded"
+                >Kubernetes</span
+              >
+            </div>
+          </div>
+          <div class="p-6 flex flex-col flex-1">
+            <h3
+              class="text-xl font-bold mb-2 group-hover:text-primary transition-colors"
+            >
+              Cloud Monitoring
+            </h3>
+            <p class="text-slate-600 dark:text-slate-400 text-sm mb-4 flex-1">
+              Microservices infrastructure health monitor with automated
+              alerting and resource optimization.
+            </p>
+            <div class="flex items-center gap-4 mt-4">
+              <button
+                class="flex-1 bg-primary text-white text-xs font-bold py-2.5 rounded-lg hover:bg-primary/90 transition-colors"
+              >
+                View Case Study
+              </button>
+              <button
+                class="flex items-center justify-center w-10 h-10 bg-slate-100 dark:bg-slate-800 rounded-lg hover:text-primary transition-colors"
+              >
+                <span class="material-symbols-outlined text-lg">code</span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- Project Card 6 -->
+        <div
+          class="group flex flex-col bg-white dark:bg-slate-900 rounded-xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-xl hover:shadow-primary/5 transition-all duration-300"
+        >
+          <div class="relative aspect-video overflow-hidden">
+            <img
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              data-alt="Fitness tracker application interface on a smartphone"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuByGQ84KY1Tx1OPVn4dFWFQwxDedI0hc7p-nkprgYkupPhqLZnMqHtfOnlrXcouH3B5gd7EjllYQlLmIsBt8s5MNqxSaPLnJejN5lk3UVLwxUQLMqaMAEGjVGuoTCbNcktTUC-8iG529s0w5rZNqG27y46JzSzKYhAxYgZ6PjegD0XoLyyoZzy2_oO593gjGeq6iXeBx3oI1AgXc_0zpC3i4l2fmyymf_I0VEM7zV_BlN0br9NmOXE5e-WTajAkusYPx5xnsQ_aQmY"
+            />
+            <div class="absolute top-3 left-3 flex gap-2">
+              <span
+                class="px-2 py-1 text-[10px] font-bold tracking-wider uppercase bg-primary text-white rounded"
+                >SvelteKit</span
+              >
+              <span
+                class="px-2 py-1 text-[10px] font-bold tracking-wider uppercase bg-pink-500 text-white rounded"
+                >Firebase</span
+              >
+            </div>
+          </div>
+          <div class="p-6 flex flex-col flex-1">
+            <h3
+              class="text-xl font-bold mb-2 group-hover:text-primary transition-colors"
+            >
+              Fitness Tracker
+            </h3>
+            <p class="text-slate-600 dark:text-slate-400 text-sm mb-4 flex-1">
+              Comprehensive health analytics app with goal tracking, nutritional
+              logging, and community challenges.
+            </p>
+            <div class="flex items-center gap-4 mt-4">
+              <button
+                class="flex-1 bg-primary text-white text-xs font-bold py-2.5 rounded-lg hover:bg-primary/90 transition-colors"
+              >
+                View Case Study
+              </button>
+              <button
+                class="flex items-center justify-center w-10 h-10 bg-slate-100 dark:bg-slate-800 rounded-lg hover:text-primary transition-colors"
+              >
+                <span class="material-symbols-outlined text-lg">code</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Pagination or Load More -->
+      <div class="mt-16 flex justify-center">
+        <button
+          class="flex items-center gap-2 bg-slate-200 dark:bg-slate-800 hover:bg-slate-300 dark:hover:bg-slate-700 text-slate-900 dark:text-white px-8 py-3 rounded-xl font-bold transition-all"
+        >
+          Load More Projects
+          <span class="material-symbols-outlined">expand_more</span>
+        </button>
+      </div>
+    </main>
+    <!-- Footer -->
+    <footer
+      class="mt-20 border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 py-12"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div
+          class="flex flex-col md:flex-row justify-between items-center gap-8"
+        >
+          <div class="flex flex-col items-center md:items-start gap-4">
+            <div class="flex items-center gap-2">
+              <span class="material-symbols-outlined text-primary text-2xl"
+                >rocket_launch</span
+              >
+              <h2
+                class="text-lg font-bold tracking-tight text-slate-900 dark:text-white"
+              >
+                DevPortfolio
+              </h2>
+            </div>
+            <p class="text-slate-500 dark:text-slate-400 text-sm">
+              Building the future of the web, one pixel at a time.
+            </p>
+          </div>
+          <div class="flex gap-6">
+            <a
+              class="w-10 h-10 flex items-center justify-center rounded-full bg-slate-100 dark:bg-slate-800 hover:text-primary transition-colors"
+              href="#"
+            >
+              <span class="material-symbols-outlined">alternate_email</span>
+            </a>
+            <a
+              class="w-10 h-10 flex items-center justify-center rounded-full bg-slate-100 dark:bg-slate-800 hover:text-primary transition-colors"
+              href="#"
+            >
+              <span class="material-symbols-outlined">terminal</span>
+            </a>
+            <a
+              class="w-10 h-10 flex items-center justify-center rounded-full bg-slate-100 dark:bg-slate-800 hover:text-primary transition-colors"
+              href="#"
+            >
+              <span class="material-symbols-outlined">link</span>
+            </a>
+          </div>
+          <div class="flex flex-col items-center md:items-end gap-2">
+            <p class="text-sm font-medium">Ready to start a project?</p>
+            <a class="text-primary font-bold hover:underline" href="#"
+              >Let's Talk →</a
+            >
+          </div>
+        </div>
+        <div
+          class="mt-12 pt-8 border-t border-slate-200 dark:border-slate-900 text-center text-slate-500 dark:text-slate-400 text-xs"
+        >
+          © 2024 DevPortfolio. All rights reserved.
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
