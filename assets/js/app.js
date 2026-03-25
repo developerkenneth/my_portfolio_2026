@@ -63,7 +63,8 @@ function showToast(message, type) {
 
 async function sendContactData(data) {
     try {
-        const response = await fetch('api/contact.php', {
+
+        const response = await fetch('/api/contact.php', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
