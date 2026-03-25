@@ -1,3 +1,20 @@
+// Dark mode detection and application
+function applyTheme() {
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const html = document.documentElement;
+    if (prefersDark) {
+        html.classList.add('dark');
+    } else {
+        html.classList.remove('dark');
+    }
+}
+
+// Apply theme on load
+applyTheme();
+
+// Listen for changes in user's color scheme preference
+window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', applyTheme);
+
 const dateSpan = document.querySelectorAll(".date");
 const date = new Date();
 
