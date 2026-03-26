@@ -81,7 +81,7 @@ function showToast(message, type) {
 async function sendContactData(data) {
     try {
 
-        const response = await fetch('/api/contact.php', {
+        const response = await fetch('api/contact.php', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -101,3 +101,5 @@ async function sendContactData(data) {
         showToast('Failed to send message. Please try again later.', 'error');
     }
 }
+
+console.log("hello world");

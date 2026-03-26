@@ -1,8 +1,14 @@
 <?php
+require_once '../init/core.php';
+require_once ROOT_PATH . '/init/Db.php';
 header('Content-Type: application/json');
 header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Methods: POST, OPTIONS');
 header('Access-Control-Allow-Headers: Content-Type');
+
+ini_set('display_errors', 0);
+ini_set('display_startup_errors', 0);
+error_reporting(E_ALL);
 
 // Handle preflight OPTIONS request
 if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
@@ -13,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
 // Only allow POST requests
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     http_response_code(405);
-    echo json_encode(['success' => false, 'message' => "Method not allowed".$_SERVER['REQUEST_METHOD'] ]);
+    echo json_encode(['success' => false, 'message' => "Method not allowed: " . $_SERVER['REQUEST_METHOD']]);
     exit();
 }
 
@@ -55,50 +61,42 @@ if (!filter_var($data['email'], FILTER_VALIDATE_EMAIL)) {
 $name = htmlspecialchars(trim($data['name']), ENT_QUOTES, 'UTF-8');
 $email = filter_var(trim($data['email']), FILTER_SANITIZE_EMAIL);
 $message = htmlspecialchars(trim($data['message']), ENT_QUOTES, 'UTF-8');
-$timestamp = isset($data['timestamp']) ? $data['timestamp'] : date('c');
 
 // Prepare contact data
 $contact_data = [
     'name' => $name,
     'email' => $email,
     'message' => $message,
-    'timestamp' => $timestamp,
     'ip_address' => $_SERVER['REMOTE_ADDR'] ?? 'unknown',
-    'user_agent' => $_SERVER['HTTP_USER_AGENT'] ?? 'unknown'
 ];
 
-// Save to file (for demonstration - in production, use database)
-$filename = __DIR__ . '/../data/contacts.json';
 
-// Create data directory if it doesn't exist
-$data_dir = dirname($filename);
-if (!is_dir($data_dir)) {
-    mkdir($data_dir, 0755, true);
-}
+try {
+    $db = new Database();
+    $conn = $db->getConnection();
 
-// Read existing contacts
-$contacts = [];
-if (file_exists($filename)) {
-    $existing_data = file_get_contents($filename);
-    $contacts = json_decode($existing_data, true) ?: [];
-}
+    // Ensure PDO is set to throw exceptions
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-// Add new contact
-$contacts[] = $contact_data;
+    $sql = "INSERT INTO contacts (name, email, message, ip_address) VALUES (:name, :email, :message, :ip_address)";
+    $stmt = $conn->prepare($sql);
 
-// Save back to file
-if (file_put_contents($filename, json_encode($contacts, JSON_PRETTY_PRINT))) {
-    // In a real application, you might send an email here
-    // mail('your-email@example.com', 'New Contact Form Submission', "Name: $name\nEmail: $email\nMessage: $message");
+    $stmt->bindParam(':name', $contact_data['name']);
+    $stmt->bindParam(':email', $contact_data['email']);
+    $stmt->bindParam(':message', $contact_data['message']);
+    $stmt->bindParam(':ip_address', $contact_data['ip_address']);
 
-    http_response_code(200);
-    echo json_encode([
-        'success' => true,
-        'message' => 'Contact form submitted successfully',
-        'data' => $contact_data
-    ]);
-} else {
+    if ($stmt->execute()) {
+        echo json_encode(['success' => true, 'message' => 'Success']);
+        exit();
+    }
+
+} catch (Exception $e) {
     http_response_code(500);
-    echo json_encode(['success' => false, 'message' => 'Failed to save contact data']);
+    echo json_encode([
+        'success' => false,
+        'message' => 'An error occurred while processing your request'
+    ]);
+    exit();
 }
-?>
+
