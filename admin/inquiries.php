@@ -32,21 +32,24 @@ include_once "assets/php/header.php";
             <p class="text-[10px] uppercase tracking-widest text-on-surface-variant font-bold">Showing 1-8 of 124</p>
         </div>
     </div>
+
+
+
     <!-- High-Fidelity Data Table -->
     <div class="bg-surface-container rounded-xl overflow-hidden border border-outline-variant/10">
         <table class="w-full text-left border-collapse">
             <thead>
                 <tr class="bg-surface-container-high/50">
                     <th class="px-6 py-4 text-[10px] uppercase tracking-[0.15em] text-on-surface-variant font-black">Sender</th>
-                    <th class="px-6 py-4 text-[10px] uppercase tracking-[0.15em] text-on-surface-variant font-black">Subject</th>
+                    <th class="px-6 py-4 text-[10px] uppercase tracking-[0.15em] text-on-surface-variant font-black">ip address</th>
                     <th class="px-6 py-4 text-[10px] uppercase tracking-[0.15em] text-on-surface-variant font-black">Date</th>
                     <th class="px-6 py-4 text-[10px] uppercase tracking-[0.15em] text-on-surface-variant font-black">Status</th>
                     <th class="px-6 py-4 text-[10px] uppercase tracking-[0.15em] text-on-surface-variant font-black text-right">Actions</th>
                 </tr>
             </thead>
-            <tbody class="divide-y divide-outline-variant/10">
+            <tbody id="table-body" class="divide-y divide-outline-variant/10">
                 <!-- Row 1 -->
-                <tr class="hover:bg-surface-bright/30 transition-colors group">
+                <!-- <tr class="hover:bg-surface-bright/30 transition-colors group">
                     <td class="px-6 py-5">
                         <div class="flex items-center gap-3">
                             <div class="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center text-primary font-bold text-xs">JD</div>
@@ -74,9 +77,9 @@ include_once "assets/php/header.php";
                             </button>
                         </div>
                     </td>
-                </tr>
+                </tr> -->
                 <!-- Row 2 -->
-                <tr class="hover:bg-surface-bright/30 transition-colors group">
+                <!-- <tr class="hover:bg-surface-bright/30 transition-colors group">
                     <td class="px-6 py-5">
                         <div class="flex items-center gap-3">
                             <div class="w-8 h-8 rounded-lg bg-tertiary/10 flex items-center justify-center text-tertiary font-bold text-xs">SK</div>
@@ -104,9 +107,9 @@ include_once "assets/php/header.php";
                             </button>
                         </div>
                     </td>
-                </tr>
+                </tr> -->
                 <!-- Row 3 -->
-                <tr class="hover:bg-surface-bright/30 transition-colors group">
+                <!-- <tr class="hover:bg-surface-bright/30 transition-colors group">
                     <td class="px-6 py-5">
                         <div class="flex items-center gap-3">
                             <div class="w-8 h-8 rounded-lg bg-secondary/20 flex items-center justify-center text-on-surface font-bold text-xs">MT</div>
@@ -134,9 +137,9 @@ include_once "assets/php/header.php";
                             </button>
                         </div>
                     </td>
-                </tr>
+                </tr> -->
                 <!-- Row 4 -->
-                <tr class="hover:bg-surface-bright/30 transition-colors group">
+                <!-- <tr class="hover:bg-surface-bright/30 transition-colors group">
                     <td class="px-6 py-5">
                         <div class="flex items-center gap-3">
                             <div class="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center text-primary font-bold text-xs">EL</div>
@@ -165,9 +168,9 @@ include_once "assets/php/header.php";
                             </button>
                         </div>
                     </td>
-                </tr>
+                </tr> -->
                 <!-- Row 5 -->
-                <tr class="hover:bg-surface-bright/30 transition-colors group">
+                <!-- <tr class="hover:bg-surface-bright/30 transition-colors group">
                     <td class="px-6 py-5">
                         <div class="flex items-center gap-3">
                             <div class="w-8 h-8 rounded-lg bg-secondary/20 flex items-center justify-center text-on-surface font-bold text-xs">RH</div>
@@ -195,16 +198,18 @@ include_once "assets/php/header.php";
                             </button>
                         </div>
                     </td>
-                </tr>
+                </tr> -->
             </tbody>
         </table>
+
+
         <!-- Pagination -->
         <div class="px-6 py-4 flex items-center justify-between bg-surface-container-high/20 border-t border-outline-variant/10">
             <button class="flex items-center gap-2 text-sm font-bold text-on-surface-variant hover:text-on-background transition-colors">
                 <span class="material-symbols-outlined text-lg" data-icon="chevron_left">chevron_left</span>
                 Previous
             </button>
-            <div class="flex items-center gap-1">
+            <div id="pages-container" class="flex items-center gap-1">
                 <button class="w-8 h-8 rounded-lg bg-primary text-on-primary font-bold text-xs">1</button>
                 <button class="w-8 h-8 rounded-lg hover:bg-surface-container-high text-on-surface-variant font-bold text-xs transition-colors">2</button>
                 <button class="w-8 h-8 rounded-lg hover:bg-surface-container-high text-on-surface-variant font-bold text-xs transition-colors">3</button>
@@ -216,6 +221,8 @@ include_once "assets/php/header.php";
                 <span class="material-symbols-outlined text-lg" data-icon="chevron_right">chevron_right</span>
             </button>
         </div>
+
+        
     </div>
     <!-- System Stats / Bento Style -->
     <div class="mt-10 grid grid-cols-1 md:grid-cols-4 gap-6">
@@ -253,6 +260,8 @@ include_once "assets/php/header.php";
     </div>
 </main>
 
+
 <?php
 include_once "assets/php/footer.php";
 ?>
+<script src="assets/js/inquiries.js"></script>

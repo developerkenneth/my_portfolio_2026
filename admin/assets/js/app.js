@@ -57,3 +57,4 @@ const date = new Date();
 dateSpan.forEach(span => {
     span.textContent = date.getFullYear();
 });
+

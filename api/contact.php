@@ -78,7 +78,7 @@ try {
     // Ensure PDO is set to throw exceptions
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    $sql = "INSERT INTO contacts (name, email, message, ip_address) VALUES (:name, :email, :message, :ip_address)";
+    $sql = "INSERT INTO inquiries (`name`, `email`, `message`, `ip_address`) VALUES (:name, :email, :message, :ip_address)";
     $stmt = $conn->prepare($sql);
 
     $stmt->bindParam(':name', $contact_data['name']);
