@@ -9,7 +9,7 @@ include_once "assets/php/header.php";
 
 ?>
 <!-- Main Content -->
-<main class="ml-64 mt-16 p-8 h-[calc(100vh-64px)] overflow-y-auto">
+<main class="ml-64 mt-16 p-8 h-[calc(100vh-64px)] overflow-y-auto ">
     <div class="mb-8">
         <h2 class="text-4xl font-black tracking-tighter text-on-background">Contact <span class="text-gradient">Inquiries</span></h2>
         <p class="text-on-surface-variant mt-2 max-w-2xl">Manage and respond to technical support requests and project inquiries from the global network.</p>
@@ -29,7 +29,7 @@ include_once "assets/php/header.php";
             </button>
         </div>
         <div class="flex items-center gap-4 px-4">
-            <p class="text-[10px] uppercase tracking-widest text-on-surface-variant font-bold">Showing 1-8 of 124</p>
+            <p class="text-[10px] uppercase tracking-widest text-on-surface-variant font-bold">Showing <span id="current-page">1</span> of <span id="total-page">2</span></p>
         </div>
     </div>
 
@@ -205,7 +205,7 @@ include_once "assets/php/header.php";
 
         <!-- Pagination -->
         <div class="px-6 py-4 flex items-center justify-between bg-surface-container-high/20 border-t border-outline-variant/10">
-            <button class="flex items-center gap-2 text-sm font-bold text-on-surface-variant hover:text-on-background transition-colors">
+            <button data-page-number="" id="previous-page" class="flex items-center gap-2 text-sm font-bold text-on-surface-variant hover:text-on-background transition-colors">
                 <span class="material-symbols-outlined text-lg" data-icon="chevron_left">chevron_left</span>
                 Previous
             </button>
@@ -216,7 +216,7 @@ include_once "assets/php/header.php";
                 <span class="text-on-surface-variant px-1">...</span>
                 <button class="w-8 h-8 rounded-lg hover:bg-surface-container-high text-on-surface-variant font-bold text-xs transition-colors">16</button>
             </div>
-            <button class="flex items-center gap-2 text-sm font-bold text-on-surface-variant hover:text-on-background transition-colors">
+            <button data-page-number="" id="next-page" class="flex items-center gap-2 text-sm font-bold text-on-surface-variant hover:text-on-background transition-colors">
                 Next
                 <span class="material-symbols-outlined text-lg" data-icon="chevron_right">chevron_right</span>
             </button>

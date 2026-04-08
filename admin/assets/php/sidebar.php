@@ -38,8 +38,8 @@
             <div class="mt-6 flex items-center gap-3 px-2">
                 <img alt="Admin Profile" class="w-10 h-10 rounded-lg object-cover" data-alt="Close up portrait of a professional man with sharp features and thoughtful expression in studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC7bk0lx48N0uYtaB7pDshD3r2dr6cNEG6TeGnr1Bc5BYQ0HWWmWFheWCdEYpehpn3vGmdVv6OwNhVJwp6ab6Lweak0Qh5M0TvOsTzXW5vVuUVomBx4Vign-Kj6vbTuBtTD5XXrJYzdY3SM6avfzh0A4YVtfyFJ91XWgFtUdbero0OhKy0cE6UTr5NW7cGNF7s6nFa2VAoNLg4iWq5lpEHnEHCnB-GyxrniJk4FCf9bVxQdv6CRvSoswV0MJhqyXoV-JkREzxRQXcA" />
                 <div>
-                    <p class="text-sm font-bold text-white leading-none">Alex Rivera</p>
-                    <p class="text-[10px] text-on-surface-variant uppercase mt-1">Lead Architect</p>
+                    <p class="text-sm font-bold text-white leading-none">Kenneth Otis</p>
+                    <p class="text-[10px] text-on-surface-variant uppercase mt-1">Software Engineer</p>
                 </div>
             </div>
         </div>

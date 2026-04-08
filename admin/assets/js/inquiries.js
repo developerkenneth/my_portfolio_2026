@@ -1,8 +1,12 @@
 const tableBody = document.querySelector("#table-body");
 const pagesContainer = document.querySelector("#pages-container");
+let totalPages;
+let currentPage;
+const displayCurrentPage = document.querySelector("#current-page");
+const displayTotalPage = document.querySelector("#total-page");
 
-let totalPages ;
-let currentPage ;
+const prevPage = document.querySelector("#previous-page");
+const nextPage = document.querySelector("#next-page");
 
 function readableDate(rawDate) {
 
@@ -18,7 +22,7 @@ function readableDate(rawDate) {
     };
 
     return date.toLocaleDateString('en-US', options)
-   
+
 }
 
 
@@ -64,22 +68,35 @@ const displayinquires = (posts) => {
 
 
 // handling pagination
-function handlePagination (totalPages, currentPage){
-    let paginationContent = "" ;
+function handlePagination(totalPages, currentPage) {
+    let paginationContent = "";
 
-    for(let i = 1; i <= totalPages; i++ ){
-            
-            if(i === currentPage){
-                paginationContent+= `<button class="w-8 h-8 rounded-lg text-on-primary bg-primary  font-bold text-xs">${i}</button>`;
+    for (let i = 1; i <= totalPages; i++) {
 
-            } else{
-                    paginationContent+= `<button class="w-8 h-8 rounded-lg hover:bg-surface-container-high text-on-surface-variant font-bold text-xs transition-colors">${i}</button>`;
-            }
+        if (i === currentPage) {
+            paginationContent += `<button data-page-number="${i}" class="w-8 h-8 rounded-lg text-on-primary bg-primary font-bold text-xs page-btn" disabled >${i}</button>`;
+
+            // add disabled to this later
+
+        } else {
+            paginationContent += `<button data-page-number="${i}" class="w-8 h-8  rounded-lg hover:bg-surface-container-high text-on-surface-variant font-bold text-xs transition-colors page-btn">${i}</button>`;
+        }
     }
 
     pagesContainer.innerHTML = paginationContent;
 
+    // getting pages btn
+    const pagesBtn = document.querySelectorAll(".page-btn");
+    pagesBtn.forEach(btn => {
+        btn.addEventListener("click", e => {
+            const pageNumber = e.target.dataset.pageNumber;
+            fetchPost(`http://localhost/new_portfolio/admin/api/?page=${pageNumber}`);
+        });
+    })
+
 }
+
+
 
 const fetchPost = async (url) => {
     // Show loading state
@@ -101,12 +118,23 @@ const fetchPost = async (url) => {
         }
         const result = await response.json();
         const data = result.data;
-        currentPage = parseInt(result.page) ;
+        currentPage = parseInt(result.page);
         totalPages = parseInt(result.total_pages);
 
-        console.log(currentPage, totalPages);
         displayinquires(data);
         handlePagination(totalPages, currentPage);
+
+        prevPage.dataset.pageNumber = currentPage--;
+        nextPage.dataset.pageNumber = currentPage++;
+        // disabling next and previous pages btn if there is none
+        if ((currentPage - 1) <= 0) {
+            prevPage.disabled = true;
+        }
+        if(currentPage === totalPages){
+            nextPage.disabled = true;
+        }
+        displayCurrentPage.textContent = currentPage;
+        displayTotalPage.textContent = totalPages;
 
     } catch (error) {
         console.error(error);
@@ -122,7 +150,6 @@ const fetchPost = async (url) => {
         `;
     }
 }
-
 
 fetchPost("http://localhost/new_portfolio/admin/api/");
 
