@@ -1,5 +1,4 @@
 <?php
-
 require_once "../init/core.php";
 require_once ROOT_PATH."/init/Database.php";
 require_once ROOT_PATH."/init/Auth.php";

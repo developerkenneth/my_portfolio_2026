@@ -2,25 +2,44 @@
 
 require_once "core.php";
 
-class Auth {
+class Auth
+{
 
-        public static function login (object $user) : void{
-                $_SESSION['user_id'] = $user->id;
-                $_SESSION['user'] = $user ;
-        }
+    public static function login(object $user): void
+    {
+        $_SESSION['user_id'] = $user->id;
+        $_SESSION['user'] = $user;
+    }
 
-        public static function user () : object {
-            return $_SESSION['user'];
-        }
+    public static function user(): object
+    {
+        return $_SESSION['user'];
+    }
 
-        public static function is_loggedin (){
+    public static function is_loggedin()
+    {
 
-            if(isset($_SESSION['user_id'] ) && !empty($_SESSION['user_id'])){
-                return true;
-            }
-
+        if (isset($_SESSION['user_id']) && !empty($_SESSION['user_id'])) {
+            return true;
+        } else {
             return false;
         }
+    }
 
-        
+
+    public static function login_redirect()
+    {
+        if (self::is_loggedin()) {
+            header("Location:index.php");
+            exit();
+        }
+    }
+
+    public static function logout_redirect()
+    {
+        if (self::is_loggedin() === false) {
+            header("Location:login.php");
+            exit;
+        }
+    }
 }

@@ -1,5 +1,7 @@
 <?php
 include_once "assets/php/process_login.php";
+Auth::logout_redirect();
+
 ?>
 <!DOCTYPE html>
 <html class="dark" lang="en">
