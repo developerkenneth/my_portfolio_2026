@@ -1,3 +1,6 @@
+
+
+alert("hello world");
 // Dark mode detection and application
 function applyTheme() {
     const savedTheme = localStorage.getItem('theme');
@@ -44,7 +47,7 @@ applyTheme();
 window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', applyTheme);
 
 // Add toggle event listener
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const toggleBtn = document.getElementById('dark-mode-toggle');
     if (toggleBtn) {
         toggleBtn.addEventListener('click', toggleTheme);
@@ -57,4 +60,5 @@ const date = new Date();
 dateSpan.forEach(span => {
     span.textContent = date.getFullYear();
 });
+
 
