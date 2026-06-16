@@ -22,6 +22,32 @@ dateSpan.forEach(span => {
     span.textContent = date.getFullYear();
 });
 
+
+
+async function sendContactData(data) {
+    try {
+
+        const response = await fetch('api/contact.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data)
+        });
+
+        if (response.ok) {
+            const result = await response.json();
+            showToast('Message sent successfully! I\'ll get back to you soon.', 'success');
+            contactForm.reset();
+        } else {
+            throw new Error('Failed to send message');
+        }
+    } catch (error) {
+        console.error('Error sending contact data:', error);
+        showToast('Failed to send message. Please try again later.', 'error');
+    }
+}
+
 // Contact form validation
 const contactForm = document.querySelector('form');
 if (contactForm) {
@@ -78,28 +104,4 @@ function showToast(message, type) {
     }).showToast();
 }
 
-async function sendContactData(data) {
-    try {
 
-        const response = await fetch('api/contact.php', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(data)
-        });
-
-        if (response.ok) {
-            const result = await response.json();
-            showToast('Message sent successfully! I\'ll get back to you soon.', 'success');
-            contactForm.reset();
-        } else {
-            throw new Error('Failed to send message');
-        }
-    } catch (error) {
-        console.error('Error sending contact data:', error);
-        showToast('Failed to send message. Please try again later.', 'error');
-    }
-}
-
-console.log("hello world");

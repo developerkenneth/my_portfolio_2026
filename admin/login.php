@@ -1,6 +1,6 @@
 <?php
 include_once "assets/php/process_login.php";
-Auth::logout_redirect();
+Auth::login_redirect();
 
 ?>
 <!DOCTYPE html>

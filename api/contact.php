@@ -1,6 +1,6 @@
 <?php
 require_once '../init/core.php';
-require_once ROOT_PATH . '/init/Db.php';
+require_once ROOT_PATH . '/init/Database.php';
 header('Content-Type: application/json');
 header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Methods: POST, OPTIONS');
@@ -87,10 +87,10 @@ try {
     $stmt->bindParam(':ip_address', $contact_data['ip_address']);
 
     if ($stmt->execute()) {
+        http_response_code(201);
         echo json_encode(['success' => true, 'message' => 'Success']);
         exit();
     }
-
 } catch (Exception $e) {
     http_response_code(500);
     echo json_encode([
@@ -99,4 +99,3 @@ try {
     ]);
     exit();
 }
-
