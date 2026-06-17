@@ -1,6 +1,3 @@
-
-
-alert("hello world");
 // Dark mode detection and application
 function applyTheme() {
     const savedTheme = localStorage.getItem('theme');

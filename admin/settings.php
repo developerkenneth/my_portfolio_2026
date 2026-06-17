@@ -13,6 +13,8 @@ include_once "assets/php/header.php";
 
 ?>
 
+
+
 <main class="ml-64 pt-24 pb-12 px-10 max-w-6xl">
     <div class="mb-10">
         <h2 class="text-3xl font-black tracking-tighter text-slate-50">Global Preferences</h2>
@@ -40,17 +42,17 @@ include_once "assets/php/header.php";
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                             <div class="space-y-1.5">
                                 <label class="text-[10px] uppercase font-bold tracking-widest text-slate-400">Full Name</label>
-                                <input class="w-full bg-slate-900 border border-slate-800 rounded-xl px-4 py-2.5 text-sm input-focus-ring text-slate-100" type="text" value="Alex Rivera" />
+                                <input id="name" class="w-full bg-slate-900 border border-slate-800 rounded-xl px-4 py-2.5 text-sm input-focus-ring text-slate-100" type="text" value="Alex Rivera" />
                             </div>
                             <div class="space-y-1.5">
                                 <label class="text-[10px] uppercase font-bold tracking-widest text-slate-400">Email Address</label>
-                                <input class="w-full bg-slate-900 border border-slate-800 rounded-xl px-4 py-2.5 text-sm input-focus-ring text-slate-100" type="email" value="alex.rivera@devportfolio.io" />
+                                <input id="emailAddress" class="w-full bg-slate-900 border border-slate-800 rounded-xl px-4 py-2.5 text-sm input-focus-ring text-slate-100" type="email" value="alex.rivera@devportfolio.io" />
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="pt-4 border-t border-slate-800/30 flex justify-end">
-                    <button class="px-6 py-2.5 bg-primary text-white text-sm font-bold rounded-xl shadow-lg shadow-blue-900/20 hover:brightness-110 transition-all active:scale-95">
+                    <button id="changeProfile" class="px-6 py-2.5 bg-primary text-white text-sm font-bold rounded-xl shadow-lg shadow-blue-900/20 hover:brightness-110 transition-all active:scale-95">
                         Save Changes
                     </button>
                 </div>
@@ -219,6 +221,7 @@ include_once "assets/php/header.php";
 </main>
 
 <!-- add necessary script here -->
+<script src="./assets/js/settings.js"></script>
 <?php
 include_once "assets/php/footer.php";
 ?>
