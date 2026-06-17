@@ -12,7 +12,7 @@ function showToast(message, type) {
 
 
 const changeProfile = document.querySelector("#changeProfile");
-changeProfile.addEventListener("click", (e) => {
+changeProfile.addEventListener("click", async (e) => {
     e.preventDefault();
 
     const name = document.querySelector("#name").value;
@@ -31,4 +31,39 @@ changeProfile.addEventListener("click", (e) => {
         showToast('Please enter a valid email address.', 'error');
         return;
     }
+
+    // send request
+    const userData = {
+        email: email,
+        name: name,
+        id: 1
+    }
+
+    try {
+        const url = "api/user.php";
+        const response = await fetch(url, {
+            headers: {
+                "Content-Type": "application/json"
+            },
+            method: "PATCH",
+            body: JSON.stringify(userData)
+        })
+
+        const data = await response.json();
+
+        if (response.status > 201) {
+            showToast(data.message, "error");
+            return;
+
+        } else {
+            showToast(data.message, "success");
+            return;
+        }
+    } catch (error) {
+        showToast("oops an error occured", "error");
+        console.error(error);
+    }
+
+
+
 }); 

@@ -2,7 +2,7 @@
 require_once dirname(dirname(__DIR__)) . "/init/core.php";
 include_once ROOT_PATH . "/model/User.php";
 include_once ROOT_PATH . "/init/Auth.php";
-
+session_start();
 
 header("Content-Type:application/json");
 header("Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS");
@@ -12,11 +12,11 @@ header("Access-Control-Allow-Headers: Content-Type, Authorization, X-Requested-W
 
 // check if the user is logged in before update
 
-if (Auth::is_loggedin() === false) {
+if (!Auth::is_loggedin()) {
     http_response_code(401);
     echo json_encode([
         'message' => 'unauthorized request',
-        'success' => false
+        'success' => false,
     ]);
     exit;
 }
@@ -74,7 +74,7 @@ if ($_SERVER['REQUEST_METHOD'] === "PATCH" || $_SERVER['REQUEST_METHOD'] === "PU
         http_response_code(400);
         echo json_encode([
             'message' => "please provide a user id",
-            'success' => false
+            'success' => false,
         ]);
         exit;
     }
